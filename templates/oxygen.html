@@ -1,0 +1,119 @@
+{%load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CovidClick</title>
+    <script src="https://kit.fontawesome.com/04e3221170.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+  
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    
+  <section id="title">
+    <div class="container-fluid">
+      <!-- Nav Bar -->
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="index.html">Covid<span>Click</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+           
+            {% if user.is_authenticated %}
+      
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Welcome, {{user.username}}</a>
+              </li>
+        
+              {% else %}
+        
+              <li class="nav-item">
+                <a class="nav-link" href="/register">Sign Up/Login</a>
+              </li>
+        
+              {% endif %}
+          </ul>
+        </div>
+      </nav>
+
+      
+
+
+
+      <!-- Title -->
+
+      
+      {% for i in hospitals %}
+
+      <div class="row-1">
+				<div class="col-sm-12 col-md-12 col-lg-12 fragment">
+					<div class="hotel-card rounded-lg shadow overflow-hidden d-block d-lg-flex">
+					
+							<div>
+								<img class="image" src="{% static 'hospital.png' %}" alt="">
+							</div>
+				
+						<div class="hotel-card_info p-4">
+							<div class="d-flex align-items-center mb-2">
+								<h5 class="mb-0 mr-2">{{i.name}}</h5>
+								<div>
+									<i class="fa fa-star text-warning"></i>
+									<i class="fa fa-star text-warning"></i>
+									<i class="fa fa-star text-warning"></i>
+									<i class="fa fa-star text-warning"></i>
+									<i class="fa fa-star text-warning"></i>
+								</div>
+								<a href="#!" class="text-dark ml-auto"><i class="far fa-heart fa-lg"></i></a>
+							</div>
+							<div class="d-flex justify-content-between align-items-end">
+								<div class="hotel-card_details">
+									<div class="text-muted mb-2"><i class="fas fa-map-marker-alt"></i> {{i.address}} </div>
+									<div class="mb-2"><span class="badge badge-primary">{{i.rating}}</span> </div>
+								
+									<ul class="hotel-checklist pl-0 mb-0">
+										<li><i class="fa fa-check text-success"></i> {{i.number}} oxygen cylinders</li>
+										
+									</ul>
+								</div>
+								<div class="hotel-card_pricing text-center">
+									<h3>{{i.price}}</h3>
+									
+									<a class="btn btn-primary" href="booknow.html">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+      <br>
+      {% endfor %}
+    </div>
+  </section>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+
+body{
+    background-color:#bde0fe;
+}
+
+.container1 {
+    position: absolute;
+    top:50px;
+
+    
+    left: 50%;
+    width:50%;
+    height:80%;
+    transform: translateX(-50%);
+    background: rgba( 255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+h1{
+    font-family: Montserrat;
+    text-align:center;
+    margin-bottom:30px;
+    
+}
+
+.container2{
+    position: absolute;
+    top:20px;
+
+    
+    left: 50%;
+    width:70%;
+    height:95%;
+    transform: translateX(-50%);
+    background: rgba( 255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+}
+
+.forms{
+    font-family: Montserrat;
+    text-align: center;
+    font-size:2rem;
+}
+
+.create1{
+    margin-top:60px;
+    font-family: Montserrat;
+    font-size:1.3rem;
+
+}
+
+.forms1{
+    font-family: Montserrat;
+    text-align: center;
+    font-size:0.9rem;
+
+}
+.create2{
+    margin-top:10px;
+    font-family: Montserrat;
+    font-size:1rem;
+
+}
+
+@media (max-width:600px){
+    .container2{
+       
+        height:120%;
+    }
+}
+
+@media (max-width:1000px){
+    .container1{
+        width:80%;
+    }
+}
+  
+
+
